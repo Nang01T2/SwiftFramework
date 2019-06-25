@@ -52,7 +52,7 @@ do {
         try fileManager.createDirectory(atPath: temporaryDirectoryPath, withIntermediateDirectories: false, attributes: nil)
     }
     
-    performCommand(description: "Making a local clone of the SwiftPlate repo") {
+    performCommand(description: "Making a local clone of the SwiftFramework repo") {
         let repositoryURL = arguments.repositoryURL ?? URL(string: "https://github.com/Nang01T2/SwiftFramework.git")!
         Process().launchBash(withCommand: "git clone \(repositoryURL.absoluteString) '\(gitClonePath)' -q")
     }
@@ -81,7 +81,7 @@ do {
     try performCommand(description: "Removing temporary folder") {
         try fileManager.removeItem(atPath: temporaryDirectoryPath)
     }
-    
+
     try performCommand(description: "Filling in template") {
         let replacer = StringReplacer(
             projectName: projectName,
@@ -90,7 +90,7 @@ do {
             gitHubURL: gitHubURL,
             organizationName: organizationName
         )
-        
+
         try replacer.process(filesInFolderWithPath: destination)
     }
     
