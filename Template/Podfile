@@ -1,0 +1,21 @@
+use_frameworks!
+
+target '{PROJECT}-iOS' do
+  platform :ios, '10.0'
+  podspec :path => '{PROJECT}.podspec'
+end
+
+target '{PROJECT}-macOS' do
+  platform :osx, '10.10'
+  podspec :path => '{PROJECT}.podspec'
+end
+
+target '{PROJECT}-tvOS' do
+  platform :tvos, '10.0'
+  podspec :path => '{PROJECT}.podspec'
+end
+
+target '{PROJECT}-watchOS' do
+  platform :watchos, '3.0'
+  podspec :path => '{PROJECT}.podspec'
+end
